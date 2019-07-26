@@ -77,3 +77,16 @@ git rm -r --cached .
 - Resized grid points again
 - Enabled 2x antialiasing
 - Deployed to judge grid
+
+## Session 05
+
+**Fri 26 Jul 2019 15:36:25 - Fri 26 Jul 2019 16:52:04**
+
+**To do**
+- Write and run a test in Unity
+
+**Done**
+- Wrote three tests in Play mode but they don't test the current scene
+- Tried to find out why, went down a rabbit hole of Data Oriented Design
+
+

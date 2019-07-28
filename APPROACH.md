@@ -89,4 +89,19 @@ git rm -r --cached .
 - Wrote three tests in Play mode but they don't test the current scene
 - Tried to find out why, went down a rabbit hole of Data Oriented Design
 
+## Session 06
 
+**28 July 2019 13:16:38 - 28 July 2019 13:46:21**
+
+**To do**
+- Edit spec to remove testing
+- Design document
+- First emitter
+
+**Done**
+- Removed testing
+- Started a new scene
+- Reimported googleVR package for editor emulator
+- Added googleVR package to gitignore
+- Created a navel, intended to be the main emitter of the mandala
+- Calculates the angles between emissions on the navel

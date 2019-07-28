@@ -53,10 +53,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Oculus\Platform\Editor\GUIHelper.cs" />
-     <Compile Include="Assets\Oculus\Platform\Editor\OculusPlatformSettingsEditor.cs" />
-     <Compile Include="Assets\Oculus\Platform\Editor\OculusPluginUpdaterStub.cs" />
-     <Compile Include="Assets\Oculus\Platform\Editor\OculusStandalonePlatformResponse.cs" />
+     <Compile Include="Assets\GoogleVR\Demos\Editor\DemoInputManagerEditor.cs" />
+     <Compile Include="Assets\GoogleVR\Demos\Editor\PermissionsDemoBuildProcessor.cs" />
+     <Compile Include="Assets\GoogleVR\Editor\Controller\GvrControllerVisualEditor.cs" />
+     <Compile Include="Assets\GoogleVR\Editor\Controller\GvrLaserPointerEditor.cs" />
+     <Compile Include="Assets\GoogleVR\Editor\Controller\GvrLaserVisualEditor.cs" />
+     <Compile Include="Assets\GoogleVR\Editor\Controller\GvrTooltipEditor.cs" />
+     <Compile Include="Assets\GoogleVR\Editor\EventSystem\GvrPointerScrollInputEditor.cs" />
+     <Compile Include="Assets\GoogleVR\Editor\GvrBuildProcessor.cs" />
+     <Compile Include="Assets\GoogleVR\Editor\GvrEditorEmulatorEditor.cs" />
+     <Compile Include="Assets\GoogleVR\Editor\GvrEditorMenu.cs" />
+     <Compile Include="Assets\GoogleVR\Editor\GvrEditorSettings.cs" />
+     <Compile Include="Assets\GoogleVR\Editor\GvrHeadsetEditor.cs" />
+     <Compile Include="Assets\GoogleVR\Editor\InstantPreviewEditor.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/Nicholas/Projects/mandala-coaster/mandala-coaster/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
@@ -323,6 +332,9 @@
  </Reference>
  <Reference Include="UnityEditor.Purchasing">
  <HintPath>C:/Users/Nicholas/Projects/mandala-coaster/mandala-coaster/Library/PackageCache/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll</HintPath>
+ </Reference>
+ <Reference Include="Google.ProtocolBuffers">
+ <HintPath>C:/Users/Nicholas/Projects/mandala-coaster/mandala-coaster/Assets/GoogleVR/Plugins/Google.ProtocolBuffers.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.14f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -682,12 +694,6 @@
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{11693B3E-34AD-3707-A1AC-AB823B9221EB}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
-    <ProjectReference Include="Oculus.VR.Editor.csproj">
-      <Project>{B820E53C-7A79-0E3F-F7FD-A319FC72E111}</Project>      <Name>Oculus.VR.Editor</Name>    </ProjectReference>
-    <ProjectReference Include="Oculus.VR.Scripts.Editor.csproj">
-      <Project>{3D5F89C8-22C5-3C4F-41A2-48ED313603F7}</Project>      <Name>Oculus.VR.Scripts.Editor</Name>    </ProjectReference>
-    <ProjectReference Include="Oculus.VR.csproj">
-      <Project>{70184071-0D65-51F3-D767-523AB148C95B}</Project>      <Name>Oculus.VR</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

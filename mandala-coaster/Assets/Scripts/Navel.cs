@@ -5,7 +5,7 @@ using UnityEngine;
 public class Navel : MonoBehaviour
 {
     public int divisions;
-
+    public float speed;
     private float angleBetweenEmissions;
     private float[] emissionAngles;
 
@@ -31,7 +31,7 @@ public class Navel : MonoBehaviour
         for(int i = 0; i < divisions; i++)
         {
             emissionAngles[i] = (i) * angleBetweenEmissions;
-            Debug.Log(emissionAngles[i]);
+            // Debug.Log(emissionAngles[i]);
         }
     }
 
@@ -41,7 +41,7 @@ public class Navel : MonoBehaviour
         {
             Instantiate(point, transform.position, Quaternion.AngleAxis(i, Vector3.forward));
         }
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1 / speed);
         StartCoroutine("Emit");
     }
 }

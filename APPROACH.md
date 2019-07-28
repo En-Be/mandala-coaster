@@ -120,4 +120,30 @@ git rm -r --cached .
 - Added simple movement to point
 - Found workflow (not ideal) for making gifs on windows
 - Found a better workflow (downloaded a screen to gif programme)
+
 ![wip001](./images/wip/001.gif)
+
+## Session 08
+
+**Sun Jul 28 20:25:32 - Sun Jul 28 21:07:42**
+
+**To do**
+- Simple motion of player through space
+    - Add a script to move whichever way the camera is looking
+    - Attach the navel to move with the gaze
+
+**Done**
+- Tried moving camera directly but had to attach it to a parent and move that
+- Tried having the parent rotate with the child but that added them together into a spin
+- Added the grid back for better spatial awareness
+- Added adjustable speeds to the player, emitter, and points
+
+![wip002](./images/wip/002.gif)
+
+## Session 09
+
+****
+
+**To do**
+- Make grid created reletive to player
+- Make player look change move direction

@@ -108,7 +108,7 @@ git rm -r --cached .
 
 ## Session 07
 
-**28 July 2019 14:02:56 - 28 July 2019 15:04:57**
+**28 July 2019 14:02:56 - Sun Jul 28 15:25:32**
 
 **To do**
 - First emitter
@@ -118,5 +118,6 @@ git rm -r --cached .
 **Done**
 - Prefab emitted at interval angle
 - Added simple movement to point
-![wip001](./images/wip/001.gif)
 - Found workflow (not ideal) for making gifs on windows
+- Found a better workflow (downloaded a screen to gif programme)
+![wip001](./images/wip/001.gif)

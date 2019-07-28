@@ -105,3 +105,18 @@ git rm -r --cached .
 - Added googleVR package to gitignore
 - Created a navel, intended to be the main emitter of the mandala
 - Calculates the angles between emissions on the navel
+
+## Session 07
+
+**28 July 2019 14:02:56 - 28 July 2019 15:04:57**
+
+**To do**
+- First emitter
+    - Add simple movement to point
+    - Repeat emission at interval
+
+**Done**
+- Prefab emitted at interval angle
+- Added simple movement to point
+![wip001](./images/wip/001.gif)
+- Found workflow (not ideal) for making gifs on windows

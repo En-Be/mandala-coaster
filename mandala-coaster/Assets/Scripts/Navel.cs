@@ -9,8 +9,22 @@ public class Navel : MonoBehaviour
     private float angleBetweenEmissions;
     private float[] emissionAngles;
 
+    public GameObject point;
+
     // Start is called before the first frame update
     void Start()
+    {
+        SetUpAngles();
+        StartCoroutine("Emit");
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    void SetUpAngles()
     {
         angleBetweenEmissions = 360.0F / divisions;
         emissionAngles = new float[divisions];
@@ -21,9 +35,13 @@ public class Navel : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator Emit()
     {
-        
+        foreach(int i in emissionAngles)
+        {
+            Instantiate(point, transform.position, Quaternion.AngleAxis(i, Vector3.forward));
+        }
+        yield return new WaitForSeconds(1);
+        StartCoroutine("Emit");
     }
 }

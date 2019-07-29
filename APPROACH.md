@@ -156,3 +156,18 @@ git rm -r --cached .
 - Made the player copy the camera rotation with a simple script
 - The points do not inherit their initial layout rotation from the navel
 - Hit a blocker on this, not sure how to more proceed. Tried inverting vector3.forward from world space to local but that didn't work.
+
+## Session 10
+
+**Mon 29 Jul 2019 16:05:14 - Mon 29 Jul 2019 17:21:06**
+
+**To do**
+- Look inside vector3.forward, see if I can recreate it relative to parent
+
+**Done**
+- Vector3.forward never changes, it's just a common vector. WRONG it doesn't change because the script is on a child, which stays at 0 rotation!
+- Still not working. Tempted to roll back movement to always be in a straight line
+- Finally fixed it. I was overwriting the rotation, rather than rotating.
+- Changed the emission interval implementation
+- Emission angles rotate around the center
+- Realised can just turn off the copy rotation script on the player to make movement linear, if I want to at different times in the game.

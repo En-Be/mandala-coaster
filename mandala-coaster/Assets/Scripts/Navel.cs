@@ -39,7 +39,9 @@ public class Navel : MonoBehaviour
     {
         foreach(int i in emissionAngles)
         {
-            Instantiate(point, transform.position, Quaternion.AngleAxis(i, Vector3.forward));
+            Vector3 relative;
+            relative = transform.InverseTransformDirection(Vector3.forward);
+            Instantiate(point, transform.position, Quaternion.AngleAxis(i, relative));
         }
         yield return new WaitForSeconds(1 / speed);
         StartCoroutine("Emit");

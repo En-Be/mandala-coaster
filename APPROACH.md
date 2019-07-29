@@ -142,8 +142,17 @@ git rm -r --cached .
 
 ## Session 09
 
-****
+**Mon 29 Jul 2019 14:58:00 - Mon 29 Jul 2019 15:49:54**
 
 **To do**
-- Make grid created reletive to player
+- Make grid created relative to player
 - Make player look change move direction
+
+**Done**
+- Downloaded and imported the googleVR package  from
+[googleVR](https://github.com/googlevr/gvr-unity-sdk/releases) since I excluded it from the repo.
+- Made the camera copy the player location with a simple script
+- Edited the googleVR script to let the camera move, by commenting out lines 219 and 234
+- Made the player copy the camera rotation with a simple script
+- The points do not inherit their initial layout rotation from the navel
+- Hit a blocker on this, not sure how to more proceed. Tried inverting vector3.forward from world space to local but that didn't work.

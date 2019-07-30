@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2041498389277015709}
   - component: {fileID: 7687199176006277313}
   m_Layer: 0
-  m_Name: Point
+  m_Name: Particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105,3 +105,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  lifeInSeconds: 5

@@ -4,34 +4,27 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-    // Have a fixed duration
-
-    // Timer starts emissions
-
-    // Timer ends emissions
-
     public int lengthInSeconds;
-    private bool running;
+    private int count;
+    private Emitter emitter;
 
-    // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine("countdown"); 
+        emitter = GameObject.Find("Emitter").GetComponent(typeof(Emitter)) as Emitter;
+        count = 0;
+        StartCoroutine("Beat"); 
     }
 
-    IEnumerator countdown()
+    IEnumerator Beat()
     {
-        running = true;
-        yield return new WaitForSeconds(lengthInSeconds);
-        running = false;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(running)
+        yield return new WaitForSeconds(1);
+        emitter.Emit();
+        count++;
+        Debug.Log(count);
+        if(count < lengthInSeconds)
         {
-
+            StartCoroutine("Beat");
         }
     }
+
 }

@@ -197,3 +197,31 @@ git rm -r --cached .
 
 ![CRC](./planning/mandala-coaster-CRC.png)
 
+## Session 12
+
+**Tue 30 Jul 2019 18:14:14 - Tue 30 Jul 2019 19:31:57**
+
+**To do**
+- Refactor to timer
+- Design document
+
+**Done**
+- Be annoyed at mac not recognising phone, even though adb lists it as a connected device
+- Specified device in Unity build
+- Deployed but not camera isn't moving with player, may have to go back to parenting it
+- Remove points emission, looks crap when the camera doesn't move the emitter
+- Added a coroutine to the particles to kill themselves after specified life in seconds
+- Refactored to have a beats method on timer trigger the emissions on Emitter
+- Simplified scene to remove anything related to the emitter rotating with player look
+
+## Session 13
+
+****
+
+**To do**
+- Design document
+    - Visual indicator of time progress?
+    - Split length into three sections (bars)
+    - Collects each beat's emissions into array
+    - Play with collections colours and speed
+    - Emit from emissions

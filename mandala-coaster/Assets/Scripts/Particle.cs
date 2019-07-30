@@ -5,16 +5,21 @@ using UnityEngine;
 public class Particle : MonoBehaviour
 {
     public int speed;
+    public int lifeInSeconds;
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine("kill");
     }
 
-    // Update is called once per frame
     void Update()
     {
         transform.Translate(Vector3.up * (Time.deltaTime * speed));
+    }
+
+    IEnumerator kill()
+    {
+        yield return new WaitForSeconds(lifeInSeconds);
+        Destroy(gameObject);
     }
 }

@@ -9,25 +9,14 @@ public class Emitter : MonoBehaviour
 
     public bool rotates;
 
-    private Transform player;
     private float angleBetweenEmissions;
     private float[] emissionAngles;
 
     public GameObject particle;
-    public GameObject point;
 
-    // Start is called before the first frame update
     void Start()
     {
         SetUpAngles();
-        StartCoroutine("Emit");
-        // player = GameObject.
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     void SetUpAngles()
@@ -37,7 +26,6 @@ public class Emitter : MonoBehaviour
         for(int i = 0; i < divisions; i++)
         {
             emissionAngles[i] = (i) * angleBetweenEmissions;
-            // Debug.Log(emissionAngles[i]);
         }
     }
 
@@ -45,24 +33,22 @@ public class Emitter : MonoBehaviour
     {
         for(int i = 0; i < divisions; i++)
         {
-            emissionAngles[i] -= angleBetweenEmissions / 4;
+            emissionAngles[i] -= angleBetweenEmissions / (divisions / 2);
         }
     }
 
-    IEnumerator Emit()
+    public void Emit()
     {
+
+        foreach(int i in emissionAngles)
+        {
+            GameObject newParticle = Instantiate(particle, transform.position, transform.rotation);
+            newParticle.transform.Rotate(0, 0, i, Space.Self);
+        }
+        
         if(rotates)
         {
             rotateAngles();
         }
-        foreach(int i in emissionAngles)
-        {
-            GameObject newParticle = Instantiate(particle, transform.position, transform.rotation);
-            Debug.Log(newParticle.transform.rotation);
-            newParticle.transform.Rotate(0, 0, i, Space.Self);
-            Instantiate(point, transform.position, transform.rotation);
-        }
-        yield return new WaitForSeconds(interval);
-        StartCoroutine("Emit");
     }
 }

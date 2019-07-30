@@ -284,7 +284,7 @@ PrefabInstance:
     - target: {fileID: 6152278695051366392, guid: 995e7787e1b9fea4589291e1abf2614d,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6152278695051366393, guid: 995e7787e1b9fea4589291e1abf2614d,
         type: 3}
@@ -391,7 +391,9 @@ MonoBehaviour:
   divisions: 14
   interval: 0.2
   rotates: 1
-  point: {fileID: 6972883498388261995, guid: 7a51a09d163b5524282fe0f21d310068, type: 3}
+  particle: {fileID: 6972883498388261995, guid: 7a51a09d163b5524282fe0f21d310068,
+    type: 3}
+  point: {fileID: 6981819845185112062, guid: fb689cd8fea8040ad8ad6da57f97e616, type: 3}
 --- !u!114 &751574755
 MonoBehaviour:
   m_ObjectHideFlags: 0

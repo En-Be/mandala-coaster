@@ -171,3 +171,29 @@ git rm -r --cached .
 - Changed the emission interval implementation
 - Emission angles rotate around the center
 - Realised can just turn off the copy rotation script on the player to make movement linear, if I want to at different times in the game.
+
+![wip003](./images/wip/003.gif)
+
+## Session 11
+
+**Tue 30 Jul 2019 16:17:23 - Tue 30 Jul 2019 17:29:55**
+
+**To do**
+- Test leaving a trail instead of generating grid points
+- Make a timer and visual indication of duration
+
+**Done**
+- Changed naming of point to particle
+- Added a simple point prefab
+- Added point emitter to navel
+- Trying to update adb and android studio so I can deploy again
+- Added gif to show previous session progress
+- Trying Android File Transfer reinstall
+- Trying android software update
+- Trying Mac update
+- Made a timer script
+- Renamed navel to emitter
+- Plan refactor of timings away from emitter to timer
+
+![CRC](./planning/mandala-coaster-CRC.png)
+

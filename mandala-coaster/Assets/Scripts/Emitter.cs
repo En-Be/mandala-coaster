@@ -6,16 +6,17 @@ public class Emitter : MonoBehaviour
 {
     public int divisions;
     public float interval;
-
     public bool rotates;
+    public GameObject particle;
 
     private float angleBetweenEmissions;
     private float[] emissionAngles;
+    public Collector collector;
 
-    public GameObject particle;
 
     void Start()
     {
+        collector = GameObject.Find("Player").GetComponent(typeof(Collector)) as Collector;
         SetUpAngles();
     }
 
@@ -39,13 +40,17 @@ public class Emitter : MonoBehaviour
 
     public void Emit()
     {
+        List<GameObject> collection = new List<GameObject>();
 
         foreach(int i in emissionAngles)
         {
             GameObject newParticle = Instantiate(particle, transform.position, transform.rotation);
             newParticle.transform.Rotate(0, 0, i, Space.Self);
+            collection.Add(newParticle);
         }
         
+        collector.AddCollection(collection);
+
         if(rotates)
         {
             rotateAngles();

@@ -194,8 +194,7 @@ git rm -r --cached .
 - Made a timer script
 - Renamed navel to emitter
 - Plan refactor of timings away from emitter to timer
-
-![CRC](./planning/mandala-coaster-CRC.png)
+![CRC](./planning/mandala-coaster-CRC-v1.png)
 
 ## Session 12
 
@@ -216,7 +215,7 @@ git rm -r --cached .
 
 ## Session 13
 
-****
+**Wed Jul 31 16:52:46 DST - Wed Jul 31 18:37:01**
 
 **To do**
 - Design document
@@ -225,3 +224,39 @@ git rm -r --cached .
     - Collects each beat's emissions into array
     - Play with collections colours and speed
     - Emit from emissions
+
+**Done**
+- Updated readme
+- Got frustrated at having nowhere to draw, looking up buying a sheet of mdf and blackboard paint
+- Tried throwing an error if time is not a multiple of 3, but it doesn't stop the program.
+- Defaulted length in seconds to 3
+- Decided on interactivity: The further away the player's gaze is from the emitter, the more random the variations of the particles. Updated readme.
+- Updated CRC model
+![CRC](./planning/mandala-coaster-CRC-v2.png)
+- Started implementing new classes but emitter stops after first beat
+- Was calling a new method by mistake
+- Adds each set of particles to a list, then add that list to a list
+- Couldn't find an answer to the question of Unity lists being ordered or not, so I wrote this method to test it:
+```
+    void testinglists() // are lists ordered?
+    {
+        List<int> numbers = new List<int>();
+        for(int i = 0; i < 10; i+=3)
+        {
+            numbers.Add(i);
+        }
+        foreach(int x in numbers)
+        {
+            Debug.Log(x);
+        }
+    }
+```
+Which gave the result:
+```
+0
+3
+6
+9
+```
+and confirmed that they are.
+- Added a link to this document in the README.

@@ -194,6 +194,7 @@ git rm -r --cached .
 - Made a timer script
 - Renamed navel to emitter
 - Plan refactor of timings away from emitter to timer
+
 ![CRC](./planning/mandala-coaster-CRC-v1.png)
 
 ## Session 12
@@ -232,7 +233,9 @@ git rm -r --cached .
 - Defaulted length in seconds to 3
 - Decided on interactivity: The further away the player's gaze is from the emitter, the more random the variations of the particles. Updated readme.
 - Updated CRC model
+
 ![CRC](./planning/mandala-coaster-CRC-v2.png)
+
 - Started implementing new classes but emitter stops after first beat
 - Was calling a new method by mistake
 - Adds each set of particles to a list, then add that list to a list
@@ -260,3 +263,18 @@ Which gave the result:
 ```
 and confirmed that they are.
 - Added a link to this document in the README.
+- Update CRC model
+
+## Session 14
+
+**Thu Aug  1 12:59:30 - **
+
+**To do**
+- Randomise each beat colour
+    - for every particle
+    - for the collection
+    - for alternating particles
+
+**Done**
+- Little refactor of timer, towards SRP, and Player and Collector and Manipulator, deleting redundant lines
+- Each collection has it's colour chosen from a list

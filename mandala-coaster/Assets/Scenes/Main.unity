@@ -314,7 +314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   divisions: 12
   interval: 1
-  rotates: 1
+  rotates: 0
   particle: {fileID: 6972883498388261995, guid: 7a51a09d163b5524282fe0f21d310068,
     type: 3}
   collector: {fileID: 0}

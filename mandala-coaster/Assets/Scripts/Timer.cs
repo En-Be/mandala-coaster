@@ -15,19 +15,24 @@ public class Timer : MonoBehaviour
         {
             lengthInSeconds = 3;
         }
-        emitter = GameObject.Find("Emitter").GetComponent(typeof(Emitter)) as Emitter;
-        manipulator = gameObject.GetComponent(typeof(Manipulator)) as Manipulator;
+        
+        findOtherComponents();
 
         count = 0;
         StartCoroutine("Counter"); 
     }
 
+    void findOtherComponents()
+    {
+        emitter = GameObject.Find("Emitter").GetComponent(typeof(Emitter)) as Emitter;
+        manipulator = gameObject.GetComponent(typeof(Manipulator)) as Manipulator;
+    }
+
     IEnumerator Counter()
     {
         yield return new WaitForSeconds(1);
-        count++;
-        Debug.Log(count);
         Beat();
+        count++;
         if(count < lengthInSeconds)
         {
             StartCoroutine("Counter");
@@ -37,7 +42,7 @@ public class Timer : MonoBehaviour
     void Beat()
     {
         emitter.Emit();
-        manipulator.Manipulate();
+        manipulator.Manipulate(count);
     }
 
 }

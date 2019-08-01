@@ -267,7 +267,7 @@ and confirmed that they are.
 
 ## Session 14
 
-**Thu Aug  1 12:59:30 - **
+**Thu Aug  1 12:59:30 - Thu Aug  1 14:01:45**
 
 **To do**
 - Randomise each beat colour
@@ -278,3 +278,21 @@ and confirmed that they are.
 **Done**
 - Little refactor of timer, towards SRP, and Player and Collector and Manipulator, deleting redundant lines
 - Each collection has it's colour chosen from a list
+
+![wip003](./images/wip/003.gif)
+
+## Session 15
+
+**Thu Aug  1 14:12:53 - Thu Aug  1 15:23:38**
+
+**To do**
+- Choose colours randomly
+- Give every particle it's own colour
+
+**Done**
+- Unity gui acting weird so reset computer
+- Made a gif of colour changer
+- Choose colours randomly
+- Assign colours by all/individual/alternating
+
+![wip004](./images/wip/004.gif)

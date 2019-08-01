@@ -5,7 +5,6 @@ using UnityEngine;
 public class Manipulator : MonoBehaviour
 {
     private Collector collector;
-    private List<GameObject> selection;
     private List<Color> colours;
 
     void Start()
@@ -19,48 +18,75 @@ public class Manipulator : MonoBehaviour
 
     public void Manipulate(int collection)
     {
-        Debug.Log(collection);
         selectParticles(collection);
-        ChangeColor(collection);
     }
 
     void selectParticles(int collection)
     {
-        selection = new List<GameObject>();
-        allParticles(collection);
+
+        switch(collection)
+        {
+            case 0:
+                allParticles(collection);
+                break;
+            case 1:
+                individualParticles(collection);
+                break;
+            case 2:
+                alternatingParticles(collection);
+                break;
+        }
     }
 
     void individualParticles(int collection)
     {
         foreach(GameObject particle in collector.Collections[collection])
         {
-            //give them their own colour
+            Material material = ChooseColor(collection);
+            Renderer rend = particle.GetComponent<Renderer>();
+            rend.material = material;
         }
     }
 
     void allParticles(int collection)
     {
-        // for every particle
+        Material material = ChooseColor(collection);
         foreach(GameObject particle in collector.Collections[collection])
-        {
-            selection.Add(particle);
-        }
-    }
-
-    void alternatingParticles()
-    {
-        // for every other particle
-        // give them the same colour
-    }
-
-    void ChangeColor(int collection)
-    {
-        Material material = new Material(Shader.Find("Unlit/Color"));
-        material.color = colours[collection];
-        foreach(GameObject particle in selection)
         {
             Renderer rend = particle.GetComponent<Renderer>();
             rend.material = material;
         }
     }
+
+    void alternatingParticles(int collection)
+    {
+        Material materialForOdds = ChooseColor(collection);
+        Material materialForEvens = ChooseColor(collection);
+
+        for(int i= 0; i < collector.Collections[collection].Count; i++)
+        {
+            Renderer rend = collector.Collections[collection][i].GetComponent<Renderer>();
+
+            if(i % 2 == 0)
+            {
+                rend.material = materialForEvens;
+            }
+            else
+            {
+                rend.material= materialForOdds;
+            }
+        }
+    }
+
+    Material ChooseColor(int collection)
+    {
+        Material material = new Material(Shader.Find("Unlit/Color"));
+        material.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
+
+        return material;
+    }
+
+
+
+
 }

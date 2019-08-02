@@ -331,3 +331,15 @@ and confirmed that they are.
 - Made nice tier meshes with visual points to indicate them
 
 ![wip006](./images/wip/006.gif)
+
+## Session 18
+
+**Fri Aug  2 13:35:13 - Fri Aug  2 14:00:59**
+
+**To do**
+- Plan effects of different tiers
+
+**Done**
+- Plan effects of different tiers
+
+![pattern-tiers](./planning/mandala-coaster-patternTiers.png)

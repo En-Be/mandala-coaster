@@ -17,6 +17,7 @@ public class Timer : MonoBehaviour
         }
         
         findOtherComponents();
+        setUpOtherComponents();
 
         count = 0;
         StartCoroutine("Counter"); 
@@ -26,6 +27,11 @@ public class Timer : MonoBehaviour
     {
         emitter = GameObject.Find("Emitter").GetComponent(typeof(Emitter)) as Emitter;
         manipulator = gameObject.GetComponent(typeof(Manipulator)) as Manipulator;
+    }
+
+    void setUpOtherComponents()
+    {
+        manipulator.setLengthInSeconds(lengthInSeconds);
     }
 
     IEnumerator Counter()

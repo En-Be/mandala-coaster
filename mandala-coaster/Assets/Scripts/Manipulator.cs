@@ -6,6 +6,8 @@ public class Manipulator : MonoBehaviour
 {
     private Collector collector;
     private List<Color> colours;
+    private int count;
+    private int lengthInSeconds;
 
     void Start()
     {
@@ -14,6 +16,12 @@ public class Manipulator : MonoBehaviour
         colours.Add(Color.blue);
         colours.Add(Color.red);
         colours.Add(Color.yellow);
+        count = lengthInSeconds;
+    }
+
+    public void setLengthInSeconds(int length)
+    {
+        lengthInSeconds = length;
     }
 
     public void Manipulate(int collection)
@@ -23,17 +31,21 @@ public class Manipulator : MonoBehaviour
 
     void selectParticles(int collection)
     {
+        int c = lengthInSeconds - count;
+        count--;
+        Debug.Log(c);
 
-        switch(collection)
+        switch(c)
         {
             case 0:
                 allParticles(collection);
                 break;
             case 1:
-                individualParticles(collection);
+                alternatingParticles(collection);
                 break;
             case 2:
-                alternatingParticles(collection);
+                individualParticles(collection);
+                count += 3;
                 break;
         }
     }

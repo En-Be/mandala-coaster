@@ -279,7 +279,7 @@ and confirmed that they are.
 - Little refactor of timer, towards SRP, and Player and Collector and Manipulator, deleting redundant lines
 - Each collection has it's colour chosen from a list
 
-![wip003](./images/wip/003.gif)
+![wip004](./images/wip/004.gif)
 
 ## Session 15
 
@@ -295,4 +295,17 @@ and confirmed that they are.
 - Choose colours randomly
 - Assign colours by all/individual/alternating
 
-![wip004](./images/wip/004.gif)
+![wip005](./images/wip/005.gif)
+
+## Session 16
+
+**Fri Aug  2 11:10:59 - Fri Aug  2 11:50:07**
+
+**To do**
+- Apply colour chooser to all beats
+
+**Done**
+- Recovered missing gif from previous commit on github
+- Passed length into the manipulator
+- Tried using length to calculate which switch to use, no good
+- Loops through switches

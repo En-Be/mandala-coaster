@@ -312,10 +312,14 @@ and confirmed that they are.
 
 ## Session 17
 
-**Fri Aug  2 11:59:59 - **
+**Fri Aug  2 11:59:59 - Fri Aug  2 13:16:50**
 
 **To do**
 - Make randomising tiers
+- Make meshes in blender
+- Import to Unity
+- Name them
+- Change manipulator behaviour based on tier
 
 **Done**
 - Plan randomiser/input class
@@ -324,3 +328,6 @@ and confirmed that they are.
 
 - Started trying to read rotation valuesand go from there, probably better to implement raycast gaze for interaction
 - Raycast sets tier string based on what is being looked at
+- Made nice tier meshes with visual points to indicate them
+
+![wip006](./images/wip/006.gif)

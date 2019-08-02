@@ -309,3 +309,18 @@ and confirmed that they are.
 - Passed length into the manipulator
 - Tried using length to calculate which switch to use, no good
 - Loops through switches
+
+## Session 17
+
+**Fri Aug  2 11:59:59 - **
+
+**To do**
+- Make randomising tiers
+
+**Done**
+- Plan randomiser/input class
+
+![CRC](./planning/mandala-coaster-CRC-v3.png)
+
+- Started trying to read rotation valuesand go from there, probably better to implement raycast gaze for interaction
+- Raycast sets tier string based on what is being looked at

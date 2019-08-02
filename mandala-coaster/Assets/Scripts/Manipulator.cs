@@ -33,7 +33,6 @@ public class Manipulator : MonoBehaviour
     {
         int c = lengthInSeconds - count;
         count--;
-        Debug.Log(c);
 
         switch(c)
         {

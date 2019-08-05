@@ -5,18 +5,18 @@ using UnityEngine;
 public class Manipulator : MonoBehaviour
 {
     private Collector collector;
+    private PlayerGaze playerGaze;
     private List<Color> colours;
-    private int count;
     private int lengthInSeconds;
 
     void Start()
     {
         collector = gameObject.GetComponent(typeof(Collector)) as Collector;
+        playerGaze = GameObject.Find("Main Camera").GetComponent(typeof(PlayerGaze)) as PlayerGaze;
         colours = new List<Color>();
         colours.Add(Color.blue);
         colours.Add(Color.red);
         colours.Add(Color.yellow);
-        count = lengthInSeconds;
     }
 
     public void setLengthInSeconds(int length)
@@ -31,20 +31,16 @@ public class Manipulator : MonoBehaviour
 
     void selectParticles(int collection)
     {
-        int c = lengthInSeconds - count;
-        count--;
-
-        switch(c)
+        switch(playerGaze.currentTier)
         {
-            case 0:
+            case ("tier_1"):
                 allParticles(collection);
                 break;
-            case 1:
+            case ("tier_2"):
                 alternatingParticles(collection);
                 break;
-            case 2:
+            case ("tier_3"):
                 individualParticles(collection);
-                count += 3;
                 break;
         }
     }

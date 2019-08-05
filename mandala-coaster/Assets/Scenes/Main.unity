@@ -404,6 +404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c4c139c92353354f91045e404612720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentTier: 
 --- !u!1 &751574752
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,6 +464,22 @@ PrefabInstance:
     - target: {fileID: 100012, guid: 635fcac1f05bd3944b14564bbe520ec9, type: 3}
       propertyPath: m_Name
       value: tiers
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 635fcac1f05bd3944b14564bbe520ec9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 635fcac1f05bd3944b14564bbe520ec9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 635fcac1f05bd3944b14564bbe520ec9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100014, guid: 635fcac1f05bd3944b14564bbe520ec9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400012, guid: 635fcac1f05bd3944b14564bbe520ec9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -866,7 +883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88848ac522e5045f2b35513187d412ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lengthInSeconds: 30
+  lengthInSeconds: 60
 --- !u!114 &1175831063
 MonoBehaviour:
   m_ObjectHideFlags: 0

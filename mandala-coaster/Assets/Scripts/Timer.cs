@@ -8,6 +8,7 @@ public class Timer : MonoBehaviour
     private int count;
     private Emitter emitter;
     private Manipulator manipulator;
+    private PlayerGaze playerGaze;
 
     void Start()
     {
@@ -26,6 +27,7 @@ public class Timer : MonoBehaviour
     void findOtherComponents()
     {
         emitter = GameObject.Find("Emitter").GetComponent(typeof(Emitter)) as Emitter;
+        playerGaze = GameObject.Find("Main Camera").GetComponent(typeof(PlayerGaze)) as PlayerGaze;
         manipulator = gameObject.GetComponent(typeof(Manipulator)) as Manipulator;
     }
 
@@ -47,7 +49,7 @@ public class Timer : MonoBehaviour
 
     void Beat()
     {
-        emitter.Emit();
+        emitter.Emit(playerGaze.currentTier);
         manipulator.Manipulate(count);
     }
 

@@ -371,7 +371,7 @@ and confirmed that they are.
 
 - Plan timescale attributes
 
-![BME](./planning/mandala-coaster-BME.png)
+![BME](./planning/mandala-coaster-BME-V1.png)
 
 
 ## Session 21
@@ -389,3 +389,20 @@ and confirmed that they are.
 - Rotated trail points to prevent visual overlap with tiers
 
 ![wip009](./images/wip/009.gif)
+
+## Session 22
+
+**Mon Aug  5 13:29:39**
+
+**To do**
+- Make tiers change patterns
+
+**Done**
+- Tiers change number of particles each emitted beat
+- Tiers change which manipulator switch is used
+- Tuned the numbers of particles
+- Further BME design
+
+![wip010](./images/wip/010.gif)
+
+- Randomised number of particles emitted within each of tier

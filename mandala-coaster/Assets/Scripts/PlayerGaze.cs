@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerGaze : MonoBehaviour
 {
     private RaycastHit rayHit;
-    private string currentTier;
+    public string currentTier;
 
     void Update()
     {

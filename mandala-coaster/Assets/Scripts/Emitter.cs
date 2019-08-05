@@ -38,8 +38,30 @@ public class Emitter : MonoBehaviour
         }
     }
 
-    public void Emit()
+    public void Emit(string currentTier)
     {
+        switch(currentTier)
+        {
+            case("tier_0"):
+                divisions = 4;
+                break;
+            case("tier_1"):
+                divisions = Random.Range(4, 20);
+                break;
+            case("tier_2"):
+                divisions = Random.Range(4, 12);
+                if(divisions % 2 != 0)
+                {
+                    divisions++;
+                }
+                break;
+            case("tier_3"):
+                divisions = Random.Range(4, 25);
+                break;
+        }
+
+        SetUpAngles();
+        
         List<GameObject> collection = new List<GameObject>();
 
         foreach(int i in emissionAngles)

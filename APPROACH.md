@@ -326,7 +326,7 @@ and confirmed that they are.
 
 ![CRC](./planning/mandala-coaster-CRC-v3.png)
 
-- Started trying to read rotation valuesand go from there, probably better to implement raycast gaze for interaction
+- Started trying to read rotation values and go from there, probably better to implement raycast gaze for interaction
 - Raycast sets tier string based on what is being looked at
 - Made nice tier meshes with visual points to indicate them
 
@@ -343,3 +343,15 @@ and confirmed that they are.
 - Plan effects of different tiers
 
 ![pattern-tiers](./planning/mandala-coaster-patternTiers.png)
+
+## Session 19
+
+**Mon Aug  5 10:43:36 - Mon Aug  5 11:14:08**
+
+**To do**
+- Add scale change logic
+
+**Done**
+- Add scale change logic
+
+![wip007](./images/wip/007.gif)

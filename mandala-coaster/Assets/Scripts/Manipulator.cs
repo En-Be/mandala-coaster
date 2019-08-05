@@ -49,52 +49,68 @@ public class Manipulator : MonoBehaviour
         }
     }
 
-    void individualParticles(int collection)
-    {
-        foreach(GameObject particle in collector.Collections[collection])
-        {
-            Material material = ChooseColor(collection);
-            Renderer rend = particle.GetComponent<Renderer>();
-            rend.material = material;
-        }
-    }
-
     void allParticles(int collection)
     {
-        Material material = ChooseColor(collection);
+        Material material = ChooseColor();
+        Vector3 size = ChooseSize();
+
         foreach(GameObject particle in collector.Collections[collection])
         {
-            Renderer rend = particle.GetComponent<Renderer>();
-            rend.material = material;
+            Renderer particleRenderer = particle.GetComponent<Renderer>();
+            particleRenderer.material = material;
+            Transform particleTransform = particle.GetComponent<Transform>();
+            particleTransform.localScale += size;
         }
     }
 
     void alternatingParticles(int collection)
     {
-        Material materialForOdds = ChooseColor(collection);
-        Material materialForEvens = ChooseColor(collection);
+        Material materialForOdds = ChooseColor();
+        Material materialForEvens = ChooseColor();
+        Vector3 sizeForOdds = ChooseSize();
+        Vector3 sizeForEvens = ChooseSize();
 
         for(int i= 0; i < collector.Collections[collection].Count; i++)
         {
-            Renderer rend = collector.Collections[collection][i].GetComponent<Renderer>();
+            Renderer particleRenderer = collector.Collections[collection][i].GetComponent<Renderer>();
+            Transform particleTransform = collector.Collections[collection][i].GetComponent<Transform>();
 
             if(i % 2 == 0)
             {
-                rend.material = materialForEvens;
+                particleRenderer.material = materialForEvens;
+                particleTransform.localScale += sizeForEvens;
             }
             else
             {
-                rend.material= materialForOdds;
+                particleRenderer.material = materialForOdds;
+                particleTransform.localScale += sizeForOdds;
             }
         }
     }
 
-    Material ChooseColor(int collection)
+    void individualParticles(int collection)
+    {
+        foreach(GameObject particle in collector.Collections[collection])
+        {
+            Renderer particleRenderer = particle.GetComponent<Renderer>();
+            particleRenderer.material = ChooseColor();
+            Transform particleTransform = particle.GetComponent<Transform>();
+            particleTransform.localScale += ChooseSize();
+        }
+    }
+
+    Material ChooseColor()
     {
         Material material = new Material(Shader.Find("Unlit/Color"));
         material.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
 
         return material;
+    }
+
+    Vector3 ChooseSize()
+    {
+        Vector3 size = new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(0.0f, 1.0f), Random.Range(-0.5f, 0.5f));
+        return size;
     }
 
 

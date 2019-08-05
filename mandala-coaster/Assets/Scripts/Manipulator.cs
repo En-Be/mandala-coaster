@@ -53,6 +53,7 @@ public class Manipulator : MonoBehaviour
     {
         Material material = ChooseColor();
         Vector3 size = ChooseSize();
+        float speed = ChooseVelocity();
 
         foreach(GameObject particle in collector.Collections[collection])
         {
@@ -60,6 +61,8 @@ public class Manipulator : MonoBehaviour
             particleRenderer.material = material;
             Transform particleTransform = particle.GetComponent<Transform>();
             particleTransform.localScale += size;
+            Particle particleScript = particle.GetComponent<Particle>();
+            particleScript.speed = speed;
         }
     }
 
@@ -69,21 +72,25 @@ public class Manipulator : MonoBehaviour
         Material materialForEvens = ChooseColor();
         Vector3 sizeForOdds = ChooseSize();
         Vector3 sizeForEvens = ChooseSize();
+        float speedForOdds = ChooseVelocity();
+        float speedForEvens = ChooseVelocity();
 
         for(int i= 0; i < collector.Collections[collection].Count; i++)
         {
             Renderer particleRenderer = collector.Collections[collection][i].GetComponent<Renderer>();
             Transform particleTransform = collector.Collections[collection][i].GetComponent<Transform>();
-
+            Particle particleScript = collector.Collections[collection][i].GetComponent<Particle>();
             if(i % 2 == 0)
             {
                 particleRenderer.material = materialForEvens;
                 particleTransform.localScale += sizeForEvens;
+                particleScript.speed = speedForEvens;
             }
             else
             {
                 particleRenderer.material = materialForOdds;
                 particleTransform.localScale += sizeForOdds;
+                particleScript.speed = speedForOdds;
             }
         }
     }
@@ -96,6 +103,9 @@ public class Manipulator : MonoBehaviour
             particleRenderer.material = ChooseColor();
             Transform particleTransform = particle.GetComponent<Transform>();
             particleTransform.localScale += ChooseSize();
+            Particle particleScript = particle.GetComponent<Particle>();
+            particleScript.speed = ChooseVelocity();
+
         }
     }
 
@@ -113,7 +123,11 @@ public class Manipulator : MonoBehaviour
         return size;
     }
 
-
+    float ChooseVelocity()
+    {
+        float speed = Random.Range(1.0f, 5.0f);
+        return speed;
+    }
 
 
 }

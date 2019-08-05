@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Particle : MonoBehaviour
 {
-    public int speed;
+    public float speed;
     public int lifeInSeconds;
 
     void Start()

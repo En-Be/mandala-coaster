@@ -355,3 +355,22 @@ and confirmed that they are.
 - Add scale change logic
 
 ![wip007](./images/wip/007.gif)
+
+## Session 20
+
+**Mon Aug  5 11:31:46 - Mon Aug  5 12:06:49**
+
+**To do**
+- Add velocity change logic
+- Plan timescale attributes
+
+**Done**
+- Add velocity change logic
+
+![wip008](./images/wip/008.gif)
+
+- Plan timescale attributes
+
+![BME](./planning/mandala-coaster-BME.png)
+
+

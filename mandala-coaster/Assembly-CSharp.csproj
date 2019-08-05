@@ -186,7 +186,9 @@
      <Compile Include="Assets\Scripts\Particle.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\PlayerGaze.cs" />
+     <Compile Include="Assets\Scripts\Tiers.cs" />
      <Compile Include="Assets\Scripts\Timer.cs" />
+     <Compile Include="Assets\Scripts\Trail.cs" />
      <None Include="Assets\GoogleVR\Shaders\GvrUIOverlayFont.shader" />
      <None Include="Assets\GoogleVR\Shaders\GvrAdditiveOverlay.shader" />
      <None Include="Assets\GoogleVR\Shaders\GvrController.shader" />

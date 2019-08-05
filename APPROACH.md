@@ -374,3 +374,18 @@ and confirmed that they are.
 ![BME](./planning/mandala-coaster-BME.png)
 
 
+## Session 21
+
+**Mon Aug  5 12:13:27 - Mon Aug  5 12:55:02**
+
+**To do**
+- Add particle direction change logic
+- Add a small trail from tiers for more movement feeling
+
+**Done**
+- Was going to add a vector to rotation but just trying to rotate like the emitter does
+- That works, tuned the values so it isn't too extreme.
+- Trail is created but killed too soon, will have to give it it's own script
+- Rotated trail points to prevent visual overlap with tiers
+
+![wip009](./images/wip/009.gif)

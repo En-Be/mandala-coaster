@@ -54,6 +54,7 @@ public class Manipulator : MonoBehaviour
         Material material = ChooseColor();
         Vector3 size = ChooseSize();
         float speed = ChooseVelocity();
+        float direction = ChooseDirection();
 
         foreach(GameObject particle in collector.Collections[collection])
         {
@@ -63,6 +64,7 @@ public class Manipulator : MonoBehaviour
             particleTransform.localScale += size;
             Particle particleScript = particle.GetComponent<Particle>();
             particleScript.speed = speed;
+            particleScript.direction = direction;
         }
     }
 
@@ -74,6 +76,8 @@ public class Manipulator : MonoBehaviour
         Vector3 sizeForEvens = ChooseSize();
         float speedForOdds = ChooseVelocity();
         float speedForEvens = ChooseVelocity();
+        float directionForOdds = ChooseDirection();
+        float directionForEvens = ChooseDirection();
 
         for(int i= 0; i < collector.Collections[collection].Count; i++)
         {
@@ -85,12 +89,14 @@ public class Manipulator : MonoBehaviour
                 particleRenderer.material = materialForEvens;
                 particleTransform.localScale += sizeForEvens;
                 particleScript.speed = speedForEvens;
+                particleScript.direction =  directionForEvens;
             }
             else
             {
                 particleRenderer.material = materialForOdds;
                 particleTransform.localScale += sizeForOdds;
                 particleScript.speed = speedForOdds;
+                particleScript.direction = directionForOdds;
             }
         }
     }
@@ -105,6 +111,7 @@ public class Manipulator : MonoBehaviour
             particleTransform.localScale += ChooseSize();
             Particle particleScript = particle.GetComponent<Particle>();
             particleScript.speed = ChooseVelocity();
+            particleScript.direction = ChooseDirection();
 
         }
     }
@@ -129,5 +136,9 @@ public class Manipulator : MonoBehaviour
         return speed;
     }
 
-
+    float ChooseDirection()
+    {
+        float direction = Random.Range(-1.0f, 1.0f);
+        return direction;
+    }
 }

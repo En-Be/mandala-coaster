@@ -5,6 +5,7 @@ using UnityEngine;
 public class Particle : MonoBehaviour
 {
     public float speed;
+    public float direction;
     public int lifeInSeconds;
 
     void Start()
@@ -14,6 +15,7 @@ public class Particle : MonoBehaviour
 
     void Update()
     {
+        transform.Rotate(0, 0, direction, Space.Self);
         transform.Translate(Vector3.up * (Time.deltaTime * speed));
     }
 

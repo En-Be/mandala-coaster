@@ -406,3 +406,18 @@ and confirmed that they are.
 ![wip010](./images/wip/010.gif)
 
 - Randomised number of particles emitted within each of tier
+
+## Session 23
+
+**Tue Aug  6 11:24:38 - Tue Aug  6 12:29:20**
+
+**To do**
+- Refactor manipulator
+
+**Done**
+- Refactor manipulation
+    - Extracted manipulation logic from selection logic, to make it reusable
+    - Moved selection logic to Collector
+    - Decreased interval between emissions
+
+![wip011](./images/wip/011.gif)

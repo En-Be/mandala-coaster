@@ -11,5 +11,48 @@ public class Collector : MonoBehaviour
         Collections.Add(collection);
     }
 
+    public List<List<GameObject>> SelectAllParticles(int collection)
+    {        
+        List<List<GameObject>> selection = new List<List<GameObject>>();
+        List<GameObject> group = new List<GameObject>();
+        foreach(GameObject particle in Collections[collection])
+        {
+            group.Add(particle);
+        }
+        selection.Add(group);
+        return selection;
+    }
 
+    public List<List<GameObject>> SelectAlternatingParticles(int collection)
+    {
+        List<List<GameObject>> selection = new List<List<GameObject>>();
+        List<GameObject> odds_group = new List<GameObject>();
+        List<GameObject> evens_group = new List<GameObject>();
+        for(int i= 0; i < Collections[collection].Count; i++)
+        {
+            if(i % 2 == 0)
+            {
+                evens_group.Add(Collections[collection][i]);
+            }
+            else
+            {
+                odds_group.Add(Collections[collection][i]);
+            }
+        }
+        selection.Add(odds_group);
+        selection.Add(evens_group);
+        return selection;
+    }
+
+    public List<List<GameObject>> SelectIndividualParticles(int collection)
+    {
+        List<List<GameObject>> selection = new List<List<GameObject>>();
+        foreach(GameObject particle in Collections[collection])
+        {
+            List<GameObject> group = new List<GameObject>();
+            group.Add(particle);
+            selection.Add(group);
+        }
+        return selection;
+    }
 }

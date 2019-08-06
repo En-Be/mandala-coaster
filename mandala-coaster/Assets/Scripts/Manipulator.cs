@@ -6,17 +6,17 @@ public class Manipulator : MonoBehaviour
 {
     private Collector collector;
     private PlayerGaze playerGaze;
-    private List<Color> colours;
+    // private List<Color> colours; Will come back to using this
     private int lengthInSeconds;
 
     void Start()
     {
         collector = gameObject.GetComponent(typeof(Collector)) as Collector;
         playerGaze = GameObject.Find("Main Camera").GetComponent(typeof(PlayerGaze)) as PlayerGaze;
-        colours = new List<Color>();
-        colours.Add(Color.blue);
-        colours.Add(Color.red);
-        colours.Add(Color.yellow);
+        // colours = new List<Color>();
+        // colours.Add(Color.blue);
+        // colours.Add(Color.red);
+        // colours.Add(Color.yellow);
     }
 
     public void setLengthInSeconds(int length)
@@ -26,33 +26,42 @@ public class Manipulator : MonoBehaviour
 
     public void Manipulate(int collection)
     {
-        selectParticles(collection);
-    }
-
-    void selectParticles(int collection)
-    {
-        switch(playerGaze.currentTier)
+        List<List<GameObject>> selection = selectParticles(collection);
+        foreach(List<GameObject> group in selection)
         {
-            case ("tier_1"):
-                allParticles(collection);
-                break;
-            case ("tier_2"):
-                alternatingParticles(collection);
-                break;
-            case ("tier_3"):
-                individualParticles(collection);
-                break;
+            ApplyColourAndSizeAndSpeedAndDirection(group);
         }
     }
 
-    void allParticles(int collection)
+    List<List<GameObject>> selectParticles(int collection)
+    {
+        List<List<GameObject>> selection = new List<List<GameObject>>();
+        switch(playerGaze.currentTier)
+        {
+            case("tier_0"):
+                selection =  new List<List<GameObject>>();
+                break;
+            case ("tier_1"):
+                selection = collector.SelectAllParticles(collection);
+                break;
+            case ("tier_2"):
+                selection = collector.SelectAlternatingParticles(collection);
+                break;
+            case ("tier_3"):
+                selection = collector.SelectIndividualParticles(collection);
+                break;
+        }
+        return selection;
+    }
+
+    void ApplyColourAndSizeAndSpeedAndDirection(List<GameObject> selection)
     {
         Material material = ChooseColor();
         Vector3 size = ChooseSize();
         float speed = ChooseVelocity();
         float direction = ChooseDirection();
 
-        foreach(GameObject particle in collector.Collections[collection])
+        foreach(GameObject particle in selection)
         {
             Renderer particleRenderer = particle.GetComponent<Renderer>();
             particleRenderer.material = material;
@@ -61,54 +70,6 @@ public class Manipulator : MonoBehaviour
             Particle particleScript = particle.GetComponent<Particle>();
             particleScript.speed = speed;
             particleScript.direction = direction;
-        }
-    }
-
-    void alternatingParticles(int collection)
-    {
-        Material materialForOdds = ChooseColor();
-        Material materialForEvens = ChooseColor();
-        Vector3 sizeForOdds = ChooseSize();
-        Vector3 sizeForEvens = ChooseSize();
-        float speedForOdds = ChooseVelocity();
-        float speedForEvens = ChooseVelocity();
-        float directionForOdds = ChooseDirection();
-        float directionForEvens = ChooseDirection();
-
-        for(int i= 0; i < collector.Collections[collection].Count; i++)
-        {
-            Renderer particleRenderer = collector.Collections[collection][i].GetComponent<Renderer>();
-            Transform particleTransform = collector.Collections[collection][i].GetComponent<Transform>();
-            Particle particleScript = collector.Collections[collection][i].GetComponent<Particle>();
-            if(i % 2 == 0)
-            {
-                particleRenderer.material = materialForEvens;
-                particleTransform.localScale += sizeForEvens;
-                particleScript.speed = speedForEvens;
-                particleScript.direction =  directionForEvens;
-            }
-            else
-            {
-                particleRenderer.material = materialForOdds;
-                particleTransform.localScale += sizeForOdds;
-                particleScript.speed = speedForOdds;
-                particleScript.direction = directionForOdds;
-            }
-        }
-    }
-
-    void individualParticles(int collection)
-    {
-        foreach(GameObject particle in collector.Collections[collection])
-        {
-            Renderer particleRenderer = particle.GetComponent<Renderer>();
-            particleRenderer.material = ChooseColor();
-            Transform particleTransform = particle.GetComponent<Transform>();
-            particleTransform.localScale += ChooseSize();
-            Particle particleScript = particle.GetComponent<Particle>();
-            particleScript.speed = ChooseVelocity();
-            particleScript.direction = ChooseDirection();
-
         }
     }
 
@@ -137,4 +98,5 @@ public class Manipulator : MonoBehaviour
         float direction = Random.Range(-1.0f, 1.0f);
         return direction;
     }
+
 }

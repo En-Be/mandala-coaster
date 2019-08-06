@@ -38,7 +38,7 @@ public class Timer : MonoBehaviour
 
     IEnumerator Counter()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.1F);
         Beat();
         count++;
         if(count < lengthInSeconds)

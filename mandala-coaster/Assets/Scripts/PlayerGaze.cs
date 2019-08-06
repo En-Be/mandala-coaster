@@ -13,7 +13,6 @@ public class PlayerGaze : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out rayHit))
         {
             currentTier = rayHit.transform.name;
-            Debug.Log(currentTier);
         }
     }
 }

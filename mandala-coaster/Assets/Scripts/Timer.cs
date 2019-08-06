@@ -4,24 +4,27 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-    public int lengthInSeconds;
+    private int lengthInSeconds;
+    private int elapsedSeconds;
     private int count;
+    private int stage;
+    private int stageLength;
+    private float interval;
+
     private Emitter emitter;
     private Manipulator manipulator;
     private PlayerGaze playerGaze;
 
     void Start()
     {
-        if(lengthInSeconds < 3)
-        {
-            lengthInSeconds = 3;
-        }
-        
+        lengthInSeconds = 60;
+        stageLength = 20;
+        interval = 1.0F;
         findOtherComponents();
         setUpOtherComponents();
-
         count = 0;
-        StartCoroutine("Counter"); 
+        StartCoroutine("Counter");
+        StartCoroutine("Beat");
     }
 
     void findOtherComponents()
@@ -38,19 +41,35 @@ public class Timer : MonoBehaviour
 
     IEnumerator Counter()
     {
-        yield return new WaitForSeconds(0.1F);
-        Beat();
-        count++;
-        if(count < lengthInSeconds)
+        yield return new WaitForSeconds(1);
+        elapsedSeconds++;
+        if(elapsedSeconds == stageLength)
+        {
+            stage++;
+            manipulator.stage = stage;
+            interval /= 3;
+            elapsedSeconds = 0;
+        }
+        if(stage != 4)
         {
             StartCoroutine("Counter");
         }
+        else
+        {
+            StopCoroutine("Beat");
+        }
+        Debug.Log($"count: {count}");
+        Debug.Log($"elapsedSeconds: {elapsedSeconds}");
+        Debug.Log($"stage: {stage}");
     }
 
-    void Beat()
+    IEnumerator Beat()
     {
+        yield return new WaitForSeconds(interval);
         emitter.Emit(playerGaze.currentTier);
         manipulator.Manipulate(count);
+        count++;
+        StartCoroutine("Beat");
     }
 
 }

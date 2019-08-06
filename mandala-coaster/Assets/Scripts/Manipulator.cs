@@ -6,17 +6,18 @@ public class Manipulator : MonoBehaviour
 {
     private Collector collector;
     private PlayerGaze playerGaze;
-    // private List<Color> colours; Will come back to using this
+    private List<Color> colours;
     private int lengthInSeconds;
+    public int stage;
 
     void Start()
     {
         collector = gameObject.GetComponent(typeof(Collector)) as Collector;
         playerGaze = GameObject.Find("Main Camera").GetComponent(typeof(PlayerGaze)) as PlayerGaze;
-        // colours = new List<Color>();
-        // colours.Add(Color.blue);
-        // colours.Add(Color.red);
-        // colours.Add(Color.yellow);
+        colours = new List<Color>();
+        colours.Add(Color.blue);
+        colours.Add(Color.red);
+        colours.Add(Color.yellow);
     }
 
     public void setLengthInSeconds(int length)
@@ -76,8 +77,16 @@ public class Manipulator : MonoBehaviour
     Material ChooseColor()
     {
         Material material = new Material(Shader.Find("Unlit/Color"));
-        material.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
-
+        switch(stage)
+        {
+            default:
+                material.color = colours[stage];
+                break;
+            case 3:
+                material.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
+                break;
+        }
+        material.color += Random.ColorHSV(-0.5F, 0.5F, -0.5F, 0.5F, -0.5F, 0.5F);
         return material;
     }
 

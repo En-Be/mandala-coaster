@@ -421,3 +421,24 @@ and confirmed that they are.
     - Decreased interval between emissions
 
 ![wip011](./images/wip/011.gif)
+
+## Session 24
+
+**Tue Aug  6 15:49:38 - Tue Aug  6 16:43:21**
+
+**To do**
+- Implement BME
+
+
+**Done**
+- BME on timer changes emitter number at each stage, stops emission after four stages
+- Stages affect colour
+
+## Session 25
+
+** **
+
+**To Do**
+- Add start/restart loop
+- Update CRC model
+- Refactor

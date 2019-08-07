@@ -467,3 +467,9 @@ and confirmed that they are.
 ![wip013](./images/wip/013.gif)
 
 - Changed the size of tier_0 for easier viewing
+
+## Session 27
+
+**To do**
+- Update CRC model
+- Refactor

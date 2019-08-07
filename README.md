@@ -15,6 +15,12 @@ The experience last for 120 seconds.
 
 ---
 
+DEMO
+
+![demo](./images/wip/014.gif)
+
+---
+
 ## HOW TO USE
 
 - Transfer the [mandala-coaster_V1.0.apk](./mandala-coaster_V1.0.apk) file to an android device compatible with a GearVR headset. 

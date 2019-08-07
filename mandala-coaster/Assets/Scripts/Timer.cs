@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
+    public bool playing;
+    
     private int lengthInSeconds;
     private int elapsedSeconds;
     private int count;
@@ -14,24 +16,36 @@ public class Timer : MonoBehaviour
     private Emitter emitter;
     private Manipulator manipulator;
     private PlayerGaze playerGaze;
+    private GameObject reticule;
+    private Collector collector;
+
 
     void Start()
     {
-        lengthInSeconds = 60;
-        stageLength = 20;
-        interval = 1.0F;
+        playing = false;
+        lengthInSeconds = 12;
+        stageLength = 3;
         findOtherComponents();
         setUpOtherComponents();
         count = 0;
+        interval = 1.0F;
+        elapsedSeconds = 0;
+    }
+
+    public void BeginNewMandala()
+    {
+        playing = true;
         StartCoroutine("Counter");
         StartCoroutine("Beat");
     }
 
     void findOtherComponents()
     {
+        collector = gameObject.GetComponent(typeof(Collector)) as Collector;
         emitter = GameObject.Find("Emitter").GetComponent(typeof(Emitter)) as Emitter;
         playerGaze = GameObject.Find("Main Camera").GetComponent(typeof(PlayerGaze)) as PlayerGaze;
         manipulator = gameObject.GetComponent(typeof(Manipulator)) as Manipulator;
+        reticule = GameObject.Find("Reticule");
     }
 
     void setUpOtherComponents()
@@ -56,7 +70,7 @@ public class Timer : MonoBehaviour
         }
         else
         {
-            StopCoroutine("Beat");
+            Reset();
         }
         Debug.Log($"count: {count}");
         Debug.Log($"elapsedSeconds: {elapsedSeconds}");
@@ -72,4 +86,16 @@ public class Timer : MonoBehaviour
         StartCoroutine("Beat");
     }
 
+    void Reset()
+    {
+        StopCoroutine("Beat");
+        playing = false;
+        count = 0;
+        interval = 1.0F;
+        elapsedSeconds = 0;
+        stage = 0;
+        collector.ResetCollection();
+        manipulator.stage = 0;
+        reticule.gameObject.SetActive(true);
+    }
 }

@@ -55,4 +55,9 @@ public class Collector : MonoBehaviour
         }
         return selection;
     }
+
+    public void ResetCollection()
+    {
+        Collections = new List<List<GameObject>>();
+    }
 }

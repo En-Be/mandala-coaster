@@ -436,9 +436,14 @@ and confirmed that they are.
 
 ## Session 25
 
-** **
+**Wed Aug  7 09:57:36 - Wed Aug  7 10:43:38**
 
 **To Do**
 - Add start/restart loop
 - Update CRC model
 - Refactor
+
+**Done**
+- Added start/restart loop, but it isn't very well structured. Needs a decent refactor.
+
+![wip012](./images/wip/012.gif)

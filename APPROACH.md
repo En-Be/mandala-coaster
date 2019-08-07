@@ -447,3 +447,23 @@ and confirmed that they are.
 - Added start/restart loop, but it isn't very well structured. Needs a decent refactor.
 
 ![wip012](./images/wip/012.gif)
+
+## Session 26
+
+**Wed Aug  7 10:55:21 - Wed Aug  7 13:00:48**
+
+**To do**
+- Hide and reveal tiers
+
+**Done**
+- Joined tier points together for easier manipulation
+- Turned them on and off with Timer
+- Fiddled for ages setting up the color ping pong lerp on the tier points
+- Made the lerps into coroutines to prevent stack overflow
+- Turned ring on and off
+- Made trail from it's own model rather than edit the tiers model
+- The reticule shrinks back to size if it is outside the ring
+
+![wip013](./images/wip/013.gif)
+
+- Changed the size of tier_0 for easier viewing

@@ -47,6 +47,9 @@ ModelImporter:
     100082: Icosphere_033
     100084: Icosphere_034
     100086: Icosphere_035
+    100088: tier_0_points
+    100090: tier_1_points
+    100092: tier_2_points
     400000: tier_0
     400002: tier_0_ring
     400004: tier_1
@@ -91,6 +94,9 @@ ModelImporter:
     400082: Icosphere_033
     400084: Icosphere_034
     400086: Icosphere_035
+    400088: tier_0_points
+    400090: tier_1_points
+    400092: tier_2_points
     2100000: unnamed
     2300000: tier_0
     2300002: tier_0_ring
@@ -135,6 +141,9 @@ ModelImporter:
     2300080: Icosphere_033
     2300082: Icosphere_034
     2300084: Icosphere_035
+    2300086: tier_0_points
+    2300088: tier_1_points
+    2300090: tier_2_points
     3300000: tier_0
     3300002: tier_0_ring
     3300004: tier_1
@@ -178,6 +187,9 @@ ModelImporter:
     3300080: Icosphere_033
     3300082: Icosphere_034
     3300084: Icosphere_035
+    3300086: tier_0_points
+    3300088: tier_1_points
+    3300090: tier_2_points
     4300000: tier_2_ring
     4300002: tier_1_ring
     4300004: tier_0_ring
@@ -221,6 +233,9 @@ ModelImporter:
     4300080: Icosphere_002
     4300082: Icosphere_001
     4300084: Icosphere
+    4300086: tier_0_points
+    4300088: tier_2_points
+    4300090: tier_1_points
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}

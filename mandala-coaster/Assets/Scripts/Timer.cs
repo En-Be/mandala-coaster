@@ -17,14 +17,16 @@ public class Timer : MonoBehaviour
     private Manipulator manipulator;
     private PlayerGaze playerGaze;
     private GameObject reticule;
+    private GameObject ring;
     private Collector collector;
+    private Tiers tiers;
 
 
     void Start()
     {
         playing = false;
-        lengthInSeconds = 12;
-        stageLength = 3;
+        lengthInSeconds = 32;
+        stageLength = 8;
         findOtherComponents();
         setUpOtherComponents();
         count = 0;
@@ -37,6 +39,7 @@ public class Timer : MonoBehaviour
         playing = true;
         StartCoroutine("Counter");
         StartCoroutine("Beat");
+        tiers.Appear();
     }
 
     void findOtherComponents()
@@ -46,6 +49,8 @@ public class Timer : MonoBehaviour
         playerGaze = GameObject.Find("Main Camera").GetComponent(typeof(PlayerGaze)) as PlayerGaze;
         manipulator = gameObject.GetComponent(typeof(Manipulator)) as Manipulator;
         reticule = GameObject.Find("Reticule");
+        ring = GameObject.Find("ring");
+        tiers = GameObject.Find("tiers").GetComponent(typeof(Tiers)) as Tiers;
     }
 
     void setUpOtherComponents()
@@ -96,6 +101,8 @@ public class Timer : MonoBehaviour
         stage = 0;
         collector.ResetCollection();
         manipulator.stage = 0;
+        tiers.Disappear();
         reticule.gameObject.SetActive(true);
+        ring.gameObject.SetActive(true);
     }
 }

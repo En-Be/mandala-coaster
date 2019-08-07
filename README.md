@@ -2,7 +2,7 @@
 
 ![372](./images/wip/372.png)
 ## A virtual reality fly-through, generated at each play with abstract shapes.
-## The purpose of this project is to practice C# and my development process. Please read the [APPROACH](./APPROACH.md) file for documentation, and look in the [Scripts](./mandala-coaster/Assets/Scripts/) folder for classes I have written.
+## The purpose of this project is to practice C# and my development process. Please read the [APPROACH](./APPROACH.md) file for documentation, and look in the [Scripts](./mandala-coaster/Assets/Scripts/) folder for the implementation I have written.
 
 ## GAMEPLAY
 The player has a degree of influence on the generation: if they focus on the center that the particles emit from, there will be no variation in pattern. 

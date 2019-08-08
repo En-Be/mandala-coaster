@@ -452,7 +452,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   divisions: 12
   interval: 1
-  rotates: 0
+  rotates: 1
   particle: {fileID: 6972883498388261995, guid: 7a51a09d163b5524282fe0f21d310068,
     type: 3}
   collector: {fileID: 0}
@@ -471,13 +471,25 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100088, guid: 635fcac1f05bd3944b14564bbe520ec9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 635fcac1f05bd3944b14564bbe520ec9, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100090, guid: 635fcac1f05bd3944b14564bbe520ec9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 100008, guid: 635fcac1f05bd3944b14564bbe520ec9, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100092, guid: 635fcac1f05bd3944b14564bbe520ec9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100014, guid: 635fcac1f05bd3944b14564bbe520ec9, type: 3}
       propertyPath: m_IsActive
@@ -715,18 +727,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4c0e8f48b6f568f4b9f2e6b0ec3109ea, type: 2}
-    - target: {fileID: 100088, guid: 635fcac1f05bd3944b14564bbe520ec9, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100090, guid: 635fcac1f05bd3944b14564bbe520ec9, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100092, guid: 635fcac1f05bd3944b14564bbe520ec9, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2300086, guid: 635fcac1f05bd3944b14564bbe520ec9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

@@ -24,14 +24,10 @@ public class Timer : MonoBehaviour
 
     void Start()
     {
-        playing = false;
-        lengthInSeconds = 32;
-        stageLength = 8;
         findOtherComponents();
         setUpOtherComponents();
-        count = 0;
-        interval = 1.0F;
-        elapsedSeconds = 0;
+        InitializeValues();
+
     }
 
     public void BeginNewMandala()
@@ -62,13 +58,7 @@ public class Timer : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         elapsedSeconds++;
-        if(elapsedSeconds == stageLength)
-        {
-            stage++;
-            manipulator.stage = stage;
-            interval /= 3;
-            elapsedSeconds = 0;
-        }
+        ChangeStage();
         if(stage != 4)
         {
             StartCoroutine("Counter");
@@ -77,9 +67,17 @@ public class Timer : MonoBehaviour
         {
             Reset();
         }
-        Debug.Log($"count: {count}");
-        Debug.Log($"elapsedSeconds: {elapsedSeconds}");
-        Debug.Log($"stage: {stage}");
+    }
+
+    void ChangeStage()
+    {
+        if(elapsedSeconds == stageLength)
+        {
+            stage++;
+            manipulator.stage = stage;
+            interval /= 3;
+            elapsedSeconds = 0;
+        }
     }
 
     IEnumerator Beat()
@@ -93,16 +91,24 @@ public class Timer : MonoBehaviour
 
     void Reset()
     {
+        InitializeValues();
         StopCoroutine("Beat");
+        collector.ResetCollection();
+        tiers.Disappear();
+        reticule.gameObject.SetActive(true);
+        ring.gameObject.SetActive(true);
+    }
+
+    void InitializeValues()
+    {
         playing = false;
+        lengthInSeconds = 32;
+        stageLength = 8;
         count = 0;
         interval = 1.0F;
         elapsedSeconds = 0;
         stage = 0;
-        collector.ResetCollection();
         manipulator.stage = 0;
-        tiers.Disappear();
-        reticule.gameObject.SetActive(true);
-        ring.gameObject.SetActive(true);
+
     }
 }

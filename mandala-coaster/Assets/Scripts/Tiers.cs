@@ -5,24 +5,24 @@ using UnityEngine;
 public class Tiers : MonoBehaviour
 {
     public GameObject trail;
-    private Transform tier_0_points;
-    private Transform tier_1_points;
-    private Transform tier_2_points;
+    private List<Transform> tier_points = new List<Transform>();
+
     private Color lerpedColor = Color.black;
 
     void Start()
     {
-        tier_0_points = gameObject.transform.GetChild(1);
-        tier_1_points = gameObject.transform.GetChild(3);
-        tier_2_points = gameObject.transform.GetChild(5);
+        tier_points.Add(gameObject.transform.GetChild(1));
+        tier_points.Add(gameObject.transform.GetChild(3));
+        tier_points.Add(gameObject.transform.GetChild(5));
     }
 
     public void Appear()
     {
         StartCoroutine("Trail");
-        tier_0_points.gameObject.SetActive(true);
-        tier_1_points.gameObject.SetActive(true);
-        tier_2_points.gameObject.SetActive(true);
+        foreach(Transform tier in tier_points)
+        {
+            tier.gameObject.SetActive(true);
+        }
         lerpedColor = Color.black;
         StartCoroutine("lerpColor");
     }
@@ -30,9 +30,10 @@ public class Tiers : MonoBehaviour
     public void Disappear()
     {
         StopCoroutine("Trail");
-        tier_0_points.gameObject.SetActive(false);
-        tier_1_points.gameObject.SetActive(false);
-        tier_2_points.gameObject.SetActive(false);
+        foreach(Transform tier in tier_points)
+        {
+            tier.gameObject.SetActive(false);
+        }
         StopCoroutine("lerpColor");
     }
 
@@ -47,9 +48,10 @@ public class Tiers : MonoBehaviour
     {
         yield return new WaitForSeconds(0);
         lerpedColor = Color.Lerp(Color.white, Color.black, Mathf.PingPong(Time.time, 1));
-        tier_0_points.gameObject.GetComponent<Renderer>().material.color = lerpedColor;
-        tier_1_points.gameObject.GetComponent<Renderer>().material.color = lerpedColor;
-        tier_2_points.gameObject.GetComponent<Renderer>().material.color = lerpedColor;
+        foreach(Transform tier in tier_points)
+        {
+            tier.gameObject.GetComponent<Renderer>().material.color = lerpedColor;
+        }
         StartCoroutine("lerpColor");
     }
 }

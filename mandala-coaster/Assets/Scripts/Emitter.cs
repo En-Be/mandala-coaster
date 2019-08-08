@@ -6,7 +6,6 @@ public class Emitter : MonoBehaviour
 {
     public int divisions;
     public float interval;
-    public bool rotates;
     public GameObject particle;
 
     private float angleBetweenEmissions;
@@ -17,25 +16,6 @@ public class Emitter : MonoBehaviour
     void Start()
     {
         collector = GameObject.Find("Player").GetComponent(typeof(Collector)) as Collector;
-        SetUpAngles();
-    }
-
-    void SetUpAngles()
-    {
-        angleBetweenEmissions = 360.0F / divisions;
-        emissionAngles = new float[divisions];
-        for(int i = 0; i < divisions; i++)
-        {
-            emissionAngles[i] = (i) * angleBetweenEmissions;
-        }
-    }
-
-    void rotateAngles()
-    {
-        for(int i = 0; i < divisions; i++)
-        {
-            emissionAngles[i] -= angleBetweenEmissions / (divisions / 2);
-        }
     }
 
     public void Emit(string currentTier)
@@ -61,7 +41,7 @@ public class Emitter : MonoBehaviour
         }
 
         SetUpAngles();
-        
+
         List<GameObject> collection = new List<GameObject>();
 
         foreach(int i in emissionAngles)
@@ -73,9 +53,18 @@ public class Emitter : MonoBehaviour
         
         collector.AddCollection(collection);
 
-        if(rotates)
+
+    }
+
+    void SetUpAngles()
+    {
+        angleBetweenEmissions = 360.0F / divisions;
+        emissionAngles = new float[divisions];
+        for(int i = 0; i < divisions; i++)
         {
-            rotateAngles();
+            emissionAngles[i] = (i) * angleBetweenEmissions;
+            emissionAngles[i] -= angleBetweenEmissions / (divisions / 2); // offset the angles
         }
     }
+
 }

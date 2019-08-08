@@ -470,6 +470,13 @@ and confirmed that they are.
 
 ## Session 27
 
+**Thu Aug  8 16:09:22 - Thu Aug  8 16:44:48**
+
 **To do**
 - Update CRC model
 - Refactor
+
+**Done**
+- Removed repetition
+- Offset the angles, removed a redundant method
+- Renamed and reordered some methods to make everything more readable

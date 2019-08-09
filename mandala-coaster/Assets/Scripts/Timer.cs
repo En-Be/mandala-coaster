@@ -6,7 +6,6 @@ public class Timer : MonoBehaviour
 {
     public bool playing;
     
-    private int lengthInSeconds;
     private int elapsedSeconds;
     private int count;
     private int stage;
@@ -25,9 +24,7 @@ public class Timer : MonoBehaviour
     void Start()
     {
         findOtherComponents();
-        setUpOtherComponents();
         InitializeValues();
-
     }
 
     public void BeginNewMandala()
@@ -47,11 +44,6 @@ public class Timer : MonoBehaviour
         reticule = GameObject.Find("Reticule");
         ring = GameObject.Find("ring");
         tiers = GameObject.Find("tiers").GetComponent(typeof(Tiers)) as Tiers;
-    }
-
-    void setUpOtherComponents()
-    {
-        manipulator.setLengthInSeconds(lengthInSeconds);
     }
 
     IEnumerator Counter()
@@ -102,13 +94,11 @@ public class Timer : MonoBehaviour
     void InitializeValues()
     {
         playing = false;
-        lengthInSeconds = 32;
         stageLength = 8;
         count = 0;
         interval = 1.0F;
         elapsedSeconds = 0;
         stage = 0;
         manipulator.stage = 0;
-
     }
 }

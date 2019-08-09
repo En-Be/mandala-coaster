@@ -7,7 +7,6 @@ public class Manipulator : MonoBehaviour
     private Collector collector;
     private PlayerGaze playerGaze;
     private List<Color> colours;
-    private int lengthInSeconds;
     public int stage;
 
     void Start()
@@ -18,11 +17,6 @@ public class Manipulator : MonoBehaviour
         colours.Add(Color.blue);
         colours.Add(Color.red);
         colours.Add(Color.yellow);
-    }
-
-    public void setLengthInSeconds(int length)
-    {
-        lengthInSeconds = length;
     }
 
     public void Manipulate(int collection)

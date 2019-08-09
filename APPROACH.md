@@ -480,3 +480,25 @@ and confirmed that they are.
 - Removed repetition
 - Offset the angles, removed a redundant method
 - Renamed and reordered some methods to make everything more readable
+
+## Session 28
+
+**Fri  9 Aug 2019 12:05:06 - Fri  9 Aug 2019 12:21:57**
+
+**To Do**
+- Refactor
+
+**Done**
+- Removed redundant value and associated methods
+- Made to do notes for if/when I revisit this project
+
+## Session 29
+
+****
+
+**To do**
+- Refactor
+    - Update CRC model
+    - Merge Tiers and Trail scripts, select from methods to use so they stay different
+    - Merge tier meshes so can just edit the colour of one object
+    - Change method names related to starting and stopping, so Timer.Reset() can call the same method on a list of scripts

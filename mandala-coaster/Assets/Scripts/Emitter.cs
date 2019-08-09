@@ -52,8 +52,6 @@ public class Emitter : MonoBehaviour
         }
         
         collector.AddCollection(collection);
-
-
     }
 
     void SetUpAngles()
